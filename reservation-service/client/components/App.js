@@ -5,6 +5,10 @@ import DatePicker from './DatePicker';
 import TimeSelector from './TimeSelector';
 import Availability from './Availability';
 import $ from 'jquery';
+import CONFIG from '../../config.client.js';
+
+const ENV = window.ENV = 'TEST'; // Define current enironment
+const PATH = window.PATH = CONFIG[ENV].HOST + ":" + CONFIG[ENV].PORT;
 
 window.$ = window.jQuery = $;
 
@@ -35,7 +39,6 @@ class App extends React.Component {
 
   updateDate(date){
     this.setState({date:date});
-    console.log(date);
   }
 
   fetchTimes(){
@@ -43,7 +46,7 @@ class App extends React.Component {
     const pathId = path.split('/')[2];
     
     $.ajax({
-      url: `http://localhost:2003/r/${pathId}/reservations`,
+      url: `${PATH}/r/${pathId}/reservations`,
       method: 'GET',
       contentType: 'application/json',
       data: JSON.stringify(this.state),
@@ -65,7 +68,7 @@ class App extends React.Component {
     const pathId = path.split('/')[2];
 
     $.ajax({
-      url: `http://localhost:2003/r/${pathId}/bookings`,
+      url: `${PATH}/r/${pathId}/bookings`,
       method: 'GET',
       contentType: 'application/json',
       success: (data)=>{
@@ -93,9 +96,9 @@ class App extends React.Component {
 
   render () {
     return (<div className="container reservation-widget">
-              <h5 className="header"><span class="title">Make a reservation</span></h5>
+              <h5 className="header"><span className="title">Make a reservation</span></h5>
                 <form>
-                  <div class="form-group">
+                  <div className="form-group">
                     <PartySelector />
                     <div className="picker">
                       <DatePicker changeDate={this.updateDate.bind(this)}/>
@@ -106,7 +109,7 @@ class App extends React.Component {
                   <div className={this.state.animate ? '' : 'hide'} id="loader"></div>
                 </form>
                 {this.state.showTables && <Availability tables={this.state.availability}/>}
-                <div className="bookingcount"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>{` Booked ${this.state.bookingCount} times today`}</div>
+                <div className="bookingcount"><span className="glyphicon glyphicon-ok" aria-hidden="true"></span>{` Booked ${this.state.bookingCount} times today`}</div>
             </div>);
   }
 }
