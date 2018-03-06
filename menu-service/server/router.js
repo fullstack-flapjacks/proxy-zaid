@@ -3,6 +3,7 @@ const path = require('path');
 const db = require("../database/index.js");
 const router = express.Router();
 
+
 router.use("/:id", express.static(path.join(__dirname + "/../client/dist")));
 
 router.get("/:id/menu", (req, res) => {
