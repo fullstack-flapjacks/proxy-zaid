@@ -1,3 +1,6 @@
+// DB=mongodb://localhost/ for josh data seed
+
+
 {
   "name": "Review-Service",
   "version": "0.0.1",

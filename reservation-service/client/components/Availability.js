@@ -52,7 +52,7 @@ var Availability = (props)=>{
     available.sort(sortByTime); //sort array in place by times;
 
     return (<div className="slots">
-             {available.map(table =><a className="confirmation" href="./confirmation.html" target="_blank"><div className="table"> {`${table.time}`} </div></a>)}
+             {available.map(table =><a className="confirmation" href="http://localhost:2003/confirmation.html" target="_blank"><div className="table"> {`${table.time}`} </div></a>)}
            </div>)
   }
 
