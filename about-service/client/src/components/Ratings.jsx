@@ -4,7 +4,7 @@ import React from 'react';
 const Ratings = (props) => {
   return (
     <div> 
-      <table style={{cellpadding: '50', marginTop: '15px', marginBottom: '15px', marginRight: '700px', marginLeft: '300px'}}>
+      <table style={{cellpadding: '50', marginTop: '15px', marginBottom: '15px', marginRight: '500px', marginLeft: '30px'}}>
         <tbody>
           <tr>
             <td><img src='https://toyotaescondido.files.wordpress.com/2012/04/5_stars1.jpg' style={{width: '80px', height: '20px'}}></img></td>
