@@ -40,7 +40,7 @@ class TimeSelector extends React.Component {
 
   render(){
     return(<div>
-            <label for="timeselector" className="form-timeselector">Time</label>
+            <label className="form-timeselector">Time</label>
               <select value={this.state.time} 
                       onChange={(event)=>{
                           this.handleChange(event); 
@@ -48,7 +48,7 @@ class TimeSelector extends React.Component {
                         }
                       } 
                       className="custom-select timeselector" id="timeselector">
-                {timeCreator().map((val)=>(<option value={val.militaryHour+":"+val.minutes}> {`${val.hour}:${val.minutes} ${val.ampm}`} </option>))}
+                {timeCreator().map((val, index)=>(<option key={index} value={val.militaryHour+":"+val.minutes}> {`${val.hour}:${val.minutes} ${val.ampm}`} </option>))}
               </select>
           </div>);
 

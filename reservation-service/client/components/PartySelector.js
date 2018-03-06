@@ -7,9 +7,9 @@ var PartySelector = ()=>{
   }
 
   return(<div>
-          <label for="party-size" className="form-party-size">Party Size</label>
+          <label className="form-party-size">Party Size</label>
             <select className="custom-select party-size" id="party-size">
-              {options.map((val)=>(<option value={val}> {val} </option>))}
+              {options.map((val, index)=>(<option key={index} value={val}> {val} </option>))}
             </select>
         </div>);
 }
