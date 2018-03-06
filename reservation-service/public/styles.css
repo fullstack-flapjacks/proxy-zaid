@@ -57,7 +57,7 @@ span.title{
 
 label.form-datepicker, label.form-timeselector, label.form-party-size{
   margin-top: 12px;
-  height: 3px;
+  height: 10px;
 }
 select#timeselector, input#datepicker, select#party-size{
   padding-left: 0;
