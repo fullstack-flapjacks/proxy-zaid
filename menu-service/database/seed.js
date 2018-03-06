@@ -1,10 +1,11 @@
 const Sequelize = require("sequelize");
 const faker = require("faker");
 const Promise = require("bluebird");
-const sequelize = new Sequelize("menus", "Joe", "", {
+const sequelize = new Sequelize("menus", "zaid", "", {
   host: "localhost",
-  port: 5554,
-  dialect: "postgres"
+  //port: 5554,
+  dialect: "postgres",
+  //protocol:"postgres"
 });
 
 const RestaurantMenuItems = sequelize.define("RestaurantMenuItems", {

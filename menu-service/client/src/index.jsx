@@ -4,7 +4,7 @@ import MenuSection from "./components/MenuSection.jsx";
 import MenuButtons from "./components/MenuButtons.jsx";
 import axios from "axios";
 
-class App extends React.Component {
+class Menus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ class App extends React.Component {
   fetch() {
     //fetches data associated with id
     axios
-      .get(`${this.state.restaurantID}menu`)
+      .get(`http://localhost:6600${this.state.restaurantID}menu`)
       .then((restaurantMenu) => {
         console.log(`${this.state.restaurantID} data fetched`);
         console.log(restaurantMenu.data);
@@ -112,4 +112,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<Menus />, document.getElementById("menus"));

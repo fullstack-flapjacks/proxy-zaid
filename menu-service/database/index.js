@@ -1,9 +1,10 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("menus", "Joe", "", {
+const sequelize = new Sequelize("menus", "zaid", "", {
   host: "localhost",
-  port: 5554,
-  dialect: "postgres"
+  //port: 5554,
+  dialect: "postgres",
+  //protocol:"postgres"
 });
 
 const RestaurantMenuItems = sequelize.define("RestaurantMenuItems", {
