@@ -4,7 +4,7 @@ import React from 'react';
 const Title = (props) => {
   return (
     <div> 
-      <h1 style={{marginTop: '15px', marginBottom: '15px', marginRight: '700px', marginLeft: '300px', borderBottom: '1px solid black'}}>{props.restaurant.name}</h1>
+      <h1 style={{'text-align': 'center', marginTop: '15px', marginBottom: '15px', marginRight: '300px', marginLeft: '30px', borderBottom: '1px solid black'}}>{props.restaurant.name}</h1>
     </div>
   )
 };

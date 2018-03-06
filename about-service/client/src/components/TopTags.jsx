@@ -4,7 +4,7 @@ import React from 'react';
 const TopTags = (props) => {
   console.log('this is props', props)
   return (
-    <table className="TagRow" style={{marginTop: '15px', marginBottom: '15px', marginRight: '700px', marginLeft: '300px'}}> 
+    <table className="TagRow" style={{marginTop: '15px', marginBottom: '15px', marginRight: '300px', marginLeft: '30px'}}> 
       <tbody>
         <tr>
           <td className="tags" style={{fontWeight: 'bold'}}>Top Tags:</td>

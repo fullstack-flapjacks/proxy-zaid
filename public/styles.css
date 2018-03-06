@@ -1,0 +1,13 @@
+#about{
+  width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  float:left;
+}
+
+.right-about{
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+
+}
