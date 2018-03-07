@@ -2,7 +2,7 @@
 
 .hero-image{
   position: absolute;
-   left: 0;
+  left: 0;
   right: 0;
   background-image: url('images/background4.jpg');
   background-size: cover;
