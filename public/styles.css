@@ -46,3 +46,7 @@ button.menu-button{
   height: 32px;
   width: 32px;
 }
+
+div#restaurants{
+  height: 40%;
+}
