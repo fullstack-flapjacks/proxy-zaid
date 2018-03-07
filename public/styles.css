@@ -9,5 +9,25 @@
   display: flex;
   flex-wrap: wrap;
   width: 350px;
+}
 
+div#reservations{
+  margin-left: 100px;
+}
+
+div#header{
+  font-size: 25px;
+}
+
+#suggested-restaurant-amount-booked{
+  font-size: 11px; 
+}
+
+#type-location, #suggested-restaurant-price, 
+#suggested-restaurant-stars, .dollar, .no-dollar{
+  font-size: 12px;
+}
+
+#suggested-restaurant-name{
+  font-size: 14px;
 }
