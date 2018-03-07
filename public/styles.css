@@ -3,6 +3,7 @@
   display: flex;
   justify-content: flex-start;
   float:left;
+  margin-bottom: 10px;
 }
 
 .right-about{
@@ -20,14 +21,28 @@ div#header{
 }
 
 #suggested-restaurant-amount-booked{
-  font-size: 11px; 
+  font-size: 12px; 
 }
 
 #type-location, #suggested-restaurant-price, 
 #suggested-restaurant-stars, .dollar, .no-dollar{
-  font-size: 12px;
+  font-size: 13px;
 }
 
 #suggested-restaurant-name{
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.row{
+  justify-content: center;
+}
+
+button.menu-button{
+  height: 40px;
+  width: 200px;
+}
+
+#right-scroll, #left-scroll{
+  height: 32px;
+  width: 32px;
 }
