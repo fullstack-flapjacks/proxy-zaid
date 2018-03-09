@@ -49,6 +49,12 @@ services:
     ports:
       - '6600:6600'
 
+  seed:
+    build: ./seed-mongodb
+    container_name: 'seed-mongodb'
+    depends_on:
+      - 'database'
+
   database:
     image: mongo:3.6.2
 

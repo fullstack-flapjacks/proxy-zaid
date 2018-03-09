@@ -12,10 +12,13 @@ RUN npm install -g nodemon
 
 RUN npm install -g webpack
 
-RUN node database/seed.js
+#RUN node database/seed.js
 
 EXPOSE 2003
+
+CMD [ "node", "database/seed.js" ]
 
 CMD [ "npm", "run", "build" ]
 
 CMD [ "npm", "start" ]
+

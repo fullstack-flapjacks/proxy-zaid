@@ -1,0 +1,29 @@
+{
+  "name": "",
+  "jest": {
+    "verbose": true,
+    "setupTestFrameworkScriptFile": "./client/tests/test-env.js"
+  },
+  "version": "",
+  "description": "",
+  "author": "",
+  "license": "",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "build": "webpack -p",
+    "test": "jest",
+    "start": "nodemon server/index.js",
+    "seed": "node database/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6"
+  },
+  "devDependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6"
+  }
+}
