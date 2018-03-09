@@ -25,6 +25,17 @@ services:
     ports: 
       - '6001:6001'
 
+  review:
+    image: enaqbz/review-component
+    container_name: 'review'
+    command: node server/server.js
+    ports:
+      - '4008:4008'
+    environment:
+      DB: mongodb://mongoJOSH/
+    depends_on:
+      - 'mongoJOSH'
+
   about:
     build: ./about-service
     container_name: 'about'
@@ -60,3 +71,13 @@ services:
     image: postgres:10.2
     environment:
       POSTGRES_DB: menus
+
+  mongoJOSH:
+    image: enaqbz/review-db
+    container_name: "mongo_josh"
+    volumes:
+     - reviews:/data/db
+     - reviews:/data/configdb
+
+volumes:
+ review:

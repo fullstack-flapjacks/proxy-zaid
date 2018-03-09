@@ -1,19 +1,19 @@
-FROM node:9.5.0-alpine
+# use node 9.5
+FROM node:9.5.0
 
-RUN mkdir -p /src/app/review
+# set container working directory to /app
+WORKDIR /app
 
-WORKDIR /src/app/review
+# put current contents into /app 
+ADD . /app 
 
-COPY . /src/app/review
-
-RUN npm install
-
-RUN npm install -g nodemon
-
-RUN npm install -g webpack
-
+# expose port 4008
 EXPOSE 4008
 
-CMD [ "npm", "run", "build1" ]
+#
+ENV ASSET_PATH /reviews/
 
-CMD [ "npm", "run", "server" ]
+# install tools
+RUN npm install
+# build
+RUN ./node_modules/.bin/webpack --config ./webpack.config.js
