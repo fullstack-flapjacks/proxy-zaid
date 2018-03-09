@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const models = require('../../database/dbModels');
 
-mongoose.connect('mongodb://localhost/restaurants');
+mongoose.connect('mongodb://database/restaurants');
 
 //searches a DB Model for particular id, and invokes callback on it
 const findInDb = function findInDb(model, id, res, callback){

@@ -1,22 +1,21 @@
-// DB=mongodb://localhost/ for josh data seed
-
-
-{
-  "name": "Review-Service",
-  "version": "0.0.1",
-  "description": "The review service and component for Fullstack Flapjack's OpenTable restaurant page clone.",
-  "author": "Josh Southern",
-  "license": "NA",
+{ 
+  "name": "",
+  "version": "",
+  "description": "",
+  "author": "",
+  "license": "",
   "engines": {
-    "node": "9.5.0"
+    "node": ">=6.13.0"
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
     "test": "./node_modules/.bin/jest --ci --testResultsProcessor='jest-junit'",
     "test_seed": "./node_modules/.bin/node ./server/db-models/test-seed.js",
     "build": "./node_modules/.bin/webpack --config ./webpack.config.js --context ./client",
+    "build1": "webpack -p",
     "start": "./node_modules/.bin/node ./server/server.js",
-    "server": "nodemon ./server/server.js",
+    "start1": "node server/server.js",
+    "server": "nodemon server/server.js",
     "seed": "./node_modules/.bin/node ./server/db-models/seed.js reviewservice 100 10000 100",
     "stats": "./node_modules/.bin/node ./server/db-models/stats.js reviewservice",
     "stats_test": "./node_modules/.bin/node ./server/db-models/stats.js testreviewservice",

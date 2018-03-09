@@ -9,7 +9,9 @@
   "scripts": {
     "test": "jest",
     "dev": "webpack -d --watch",
-    "build": "webpack -p --watch"
+    "build": "webpack -p",
+    "seed": "node db/index.js",
+    "start": "nodemon server/index.js"
   },
   "dependencies": {
     "babel-loader": "^7.1.2",

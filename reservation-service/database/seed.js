@@ -2,7 +2,8 @@ const mongoose = require('mongoose'); // include DB object
 const seed = require('./dataGenerator');
 const models = require('./dbModels');
 
-mongoose.connect('mongodb://localhost/restaurants');
+mongoose.connect('mongodb://database/restaurants');
+//mongoose.connect('mongodb://localhost/restaurants');
 
 let Availability = models.availability;
 let Bookings = models.bookings;
@@ -23,6 +24,7 @@ Bookings.create(seed.bookingsData, (err, entries)=>{
     return;
   }
   console.log('Successfully seeded bookings count data', entries);
+
 });
 
 

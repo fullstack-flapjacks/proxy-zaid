@@ -3,7 +3,7 @@ const faker = require('faker');  //faker will be used to generate dummy data
 const dataGenerator = require('./dataGenerator.js');
 const requests = require('../server/requests.js');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/restaurants');
+mongoose.connect('mongodb://database/restaurants');
 // , {useMongoClient: true}
 //defining the location schema and data shape
 // let locationSchema = mongoose.Schema({

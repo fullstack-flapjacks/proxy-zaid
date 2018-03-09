@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  proxy:
+    build: .
+    container_name: 'proxy_server'
+    depends_on:
+      - 'database'
+    ports: 
+      - '3000:3000'
+
+  reservations:
+    build: ./reservation-service
+    container_name: 'reservations'
+    depends_on:
+      - 'database'
+    ports: 
+      - '2003:2003'
+
+  suggested:
+    build: ./suggested-service
+    container_name: 'suggested'
+    depends_on:
+      - 'database'
+    ports: 
+      - '6001:6001'
+
+  review:
+    build: ./review-service
+    container_name: 'review'
+    depends_on:
+      - 'database'
+    ports:
+      - '4008:4008'
+
+  about:
+    build: ./about-service
+    container_name: 'about'
+    depends_on:
+      - 'database'
+    ports:
+      - '1128:1128'
+
+  menu:
+    build: ./menu-service
+    container_name: 'menu'
+    depends_on:
+      - 'postgresDB'
+    ports:
+      - '6600:6600'
+
+  database:
+    image: mongo:3.6.2
+
+  postgresDB:
+    image: postgres:10.2

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const data = require('./data.js');
-mongoose.connect('mongodb://localhost/restaurants');
+mongoose.connect('mongodb://database/restaurants');
 
 // let availabilitySchema = mongoose.Schema({
 //   day: Number,

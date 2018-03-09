@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("menus", "zaid", "", {
-  host: "localhost",
+const sequelize = new Sequelize("menus", "postgres", "", {
+  host: "postgresDB",
   //port: 5554,
   dialect: "postgres",
   //protocol:"postgres"
