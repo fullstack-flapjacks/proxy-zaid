@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   proxy:
@@ -55,8 +55,16 @@ services:
     depends_on:
       - 'database'
 
+  seed2:
+    build: ./seed-pg
+    container_name: 'seed-pg'
+    depends_on:
+      - 'postgresDB'
+
   database:
     image: mongo:3.6.2
 
   postgresDB:
     image: postgres:10.2
+    environment:
+      POSTGRES_DB: menus

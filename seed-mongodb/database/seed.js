@@ -29,7 +29,7 @@ mongoose.connection.on('connected', ()=>{
       console.log('Error seeding restaurant availbility data', err);
       return;
     }
-    console.log('Successfully seeded restaurant availability data', entries);
+    console.log('Successfully seeded restaurant availability data');
   });  
 
   Bookings.create(seed.bookingsData, (err, entries)=>{
@@ -37,7 +37,7 @@ mongoose.connection.on('connected', ()=>{
       console.log('Error seeding bookings count data', err);
       return;
     }
-    console.log('Successfully seeded bookings count data', entries);
+    console.log('Successfully seeded bookings count data');
   });
 
 

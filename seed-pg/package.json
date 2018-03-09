@@ -1,0 +1,46 @@
+{
+  "name": "menu_module",
+  "version": "0.0.1",
+  "description": "The menu component for Fullstack Flapjack's OpenTable restaurant page clone.",
+  "author": "Joe Tam",
+  "license": "none",
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
+  },
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "start": "webpack -p",
+    "seed": "node ./database/seed.js",
+    "server": "nodemon server/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/jest-setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "pg-pool": "^2.0.3",
+    "sequelize": "^4.34.0",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.0.1",
+    "webpack-dev-server": "^3.0.0"
+  }
+}
