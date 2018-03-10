@@ -2,7 +2,7 @@ version: '2'
 
 services:
   proxy:
-    build: .
+    image: zaidhusseini/fullstack-flapjacks:proxy.v1.0.0
     container_name: 'proxy_server'
     depends_on:
       - 'database'
@@ -10,7 +10,7 @@ services:
       - '3000:3000'
 
   reservations:
-    build: ./reservation-service
+    image: zaidhusseini/fullstack-flapjacks:reservations.v1.0.0
     container_name: 'reservations'
     depends_on:
       - 'database'
@@ -18,7 +18,7 @@ services:
       - '2003:2003'
 
   suggested:
-    build: ./suggested-service
+    image: zaidhusseini/fullstack-flapjacks:suggested.v1.0.0
     container_name: 'suggested'
     depends_on:
       - 'database'
@@ -26,7 +26,7 @@ services:
       - '6001:6001'
 
   about:
-    build: ./about-service
+    image: zaidhusseini/fullstack-flapjacks:about.v1.0.0
     container_name: 'about'
     depends_on:
       - 'database'
@@ -34,7 +34,7 @@ services:
       - '1128:1128'
 
   menu:
-    build: ./menu-service
+    image: zaidhusseini/fullstack-flapjacks:menu.v1.0.0
     container_name: 'menu'
     depends_on:
       - 'postgresDB'
@@ -42,13 +42,13 @@ services:
       - '6600:6600'
 
   seed:
-    build: ./seed-mongodb
+    image: zaidhusseini/fullstack-flapjacks:seed.v1.0.0
     container_name: 'seed-mongodb'
     depends_on:
       - 'database'
 
   seed2:
-    build: ./seed-pg
+    image: zaidhusseini/fullstack-flapjacks:seed2.v1.0.0
     container_name: 'seed-pg'
     depends_on:
       - 'postgresDB'
