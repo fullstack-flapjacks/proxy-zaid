@@ -3,14 +3,21 @@ version: '2'
 services:
   proxy:
     image: zaidhusseini/fullstack-flapjacks:proxy.v1.0.0
+    #build: .
     container_name: 'proxy_server'
     depends_on:
+      - 'postgresDB'
       - 'database'
+      - 'reservations'
+      - 'suggested'
+      - 'about'
+      - 'menu'
     ports: 
       - '3000:3000'
 
   reservations:
     image: zaidhusseini/fullstack-flapjacks:reservations.v1.0.0
+    #build: ./reservation-service
     container_name: 'reservations'
     depends_on:
       - 'database'

@@ -7,8 +7,8 @@ import Availability from './Availability';
 import $ from 'jquery';
 import CONFIG from '../../config.client.js';
 
-const ENV = window.ENV = 'TEST'; // Define current enironment
-const PATH = window.PATH = CONFIG[ENV].HOST + ":" + CONFIG[ENV].PORT;
+const ENV = window.ENV = 'DOCKER'; // Define current enironment
+const PATH = window.PATH = CONFIG[ENV].HOST + CONFIG[ENV].PORT;
 
 window.$ = window.jQuery = $;
 

@@ -3,7 +3,11 @@
 const CONFIG = {
   "TEST": {
     "HOST": "http://localhost",
-    "PORT": "2003"
+    "PORT": ":2003"
+  },
+  "DOCKER": {
+    "HOST": "/reservations",
+    "PORT": ""
   }
 }
 
