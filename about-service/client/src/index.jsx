@@ -43,7 +43,7 @@ class About extends React.Component {
 
   //send GET request to get the about information for the restaurant 
   getInformation(restaurant_id) {
-    axios.get(`http://about/r/${restaurant_id}/about`)
+    axios.get(`/about/r/${restaurant_id}/about`)
     .then((response) => {
       console.log(response);
       this.setState({

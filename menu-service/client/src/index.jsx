@@ -29,7 +29,7 @@ class Menus extends React.Component {
   fetch() {
     //fetches data associated with id
     axios
-      .get(`http://localhost:6600${this.state.restaurantID}menu`)
+      .get(`/menu${this.state.restaurantID}menu`)
       .then((restaurantMenu) => {
         console.log(`${this.state.restaurantID} data fetched`);
         console.log(restaurantMenu.data);

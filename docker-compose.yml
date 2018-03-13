@@ -13,7 +13,7 @@ services:
       - 'about'
       - 'menu'
     ports: 
-      - '3000:3000'
+      - '80:3000'
 
   reservations:
     image: zaidhusseini/fullstack-flapjacks:reservations.v1.0.0
@@ -21,11 +21,13 @@ services:
     container_name: 'reservations'
     depends_on:
       - 'database'
+      - 'seed'
     ports: 
       - '2003:2003'
 
   suggested:
     image: zaidhusseini/fullstack-flapjacks:suggested.v1.0.0
+    #build: ./suggested-service
     container_name: 'suggested'
     depends_on:
       - 'database'
@@ -34,6 +36,7 @@ services:
 
   about:
     image: zaidhusseini/fullstack-flapjacks:about.v1.0.0
+    #build: ./about-service
     container_name: 'about'
     depends_on:
       - 'database'
@@ -42,9 +45,11 @@ services:
 
   menu:
     image: zaidhusseini/fullstack-flapjacks:menu.v1.0.0
+    #build: ./menu-service
     container_name: 'menu'
     depends_on:
       - 'postgresDB'
+      - 'seed2'
     ports:
       - '6600:6600'
 

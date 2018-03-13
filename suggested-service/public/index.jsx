@@ -18,7 +18,7 @@ class Suggestions extends React.Component {
   fetch() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:6001' + window.location.pathname + 'suggestions',
+      url: '/suggested' + window.location.pathname + 'suggestions',
       success: (data) => {
         console.log('SUCCESS! ', data);
         this.setState({restaurants: data})

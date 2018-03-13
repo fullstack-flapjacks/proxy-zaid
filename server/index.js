@@ -23,7 +23,6 @@ const reservationsRequest = function(req, res){
     } else {
       res.send(body);
     }
-
   });
 }
 
@@ -31,23 +30,59 @@ const about = function(req, res){
   request(`http://about:1128/r/15/${req.url}`,  (error, response, body) => res.send(body));
 }
 
+const aboutRequest = function(req, res){
+  request(`http://about:1128${req.url}`,  (error, response, body) => {
+    if(response.headers['content-type'].includes('application/json')){
+      res.send(JSON.parse(body));
+    } else {
+      res.send(body);
+    }
+  });
+}
+
+
 const menu = function(req, res){
   request(`http://menu:6600/r/15/${req.url}`,  (error, response, body) => res.send(body));
 }  
+
+const menuRequest = function(req, res){
+  request(`http://menu:6600${req.url}`,  (error, response, body) => {
+    if(response.headers['content-type'].includes('application/json')){
+      res.send(JSON.parse(body));
+    } else {
+      res.send(body);
+    }
+  });
+}
+
+
 
 const suggested = function(req, res){
   request(`http://suggested:6001/r/15/${req.url}`,  (error, response, body) => res.send(body));
 }
 
+const suggestedRequest = function(req, res){
+  request(`http://suggested:6001${req.url}`,  (error, response, body) => {
+    if(response.headers['content-type'].includes('application/json')){
+      res.send(JSON.parse(body));
+    } else {
+      res.send(body);
+    }
+  });
+}
 
-//router.get('/r/:id/reservations', reservationsRequest)
 
 app.use('/r/:id/reservationsSTATIC', reservations);
 app.use('/reservations', reservationsRequest);
 
 app.use('/r/:id/aboutSTATIC', about);
+app.use('/about', aboutRequest);
+
 app.use('/r/:id/menuSTATIC', menu);
+app.use('/menu', menuRequest);
+
 app.use('/r/:id/suggestedSTATIC', suggested);
+app.use('/suggested', suggestedRequest);
 
 
 app.listen(PORT, ()=>console.log('Proxy Server listening on PORT', PORT));
