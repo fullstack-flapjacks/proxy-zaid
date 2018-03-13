@@ -10,8 +10,8 @@ const mongoUrl = 'mongodb://database/restaurants'
 var connectWithRetry = function() {
   return mongoose.connect(mongoUrl, function(err) {
     if (err) {
-      console.error('Failed to connect to mongo on startup - retrying in 10 sec', err);
-      setTimeout(connectWithRetry, 10000);
+      console.error('Failed to connect to mongo on startup', err);
+      //setTimeout(connectWithRetry, 10000);
     }
   });
 };

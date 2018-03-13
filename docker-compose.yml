@@ -16,8 +16,8 @@ services:
       - '80:3000'
 
   reservations:
-    image: zaidhusseini/fullstack-flapjacks:reservations.v1.0.0
-    #build: ./reservation-service
+    #image: zaidhusseini/fullstack-flapjacks:reservations.v1.0.0
+    build: ./reservation-service
     container_name: 'reservations'
     depends_on:
       - 'database'
@@ -49,18 +49,19 @@ services:
     container_name: 'menu'
     depends_on:
       - 'postgresDB'
-      - 'seed2'
     ports:
       - '6600:6600'
 
   seed:
-    image: zaidhusseini/fullstack-flapjacks:seed.v1.0.0
+    #image: zaidhusseini/fullstack-flapjacks:seed.v1.0.0
+    build: ./seed-mongodb
     container_name: 'seed-mongodb'
     depends_on:
       - 'database'
 
   seed2:
     image: zaidhusseini/fullstack-flapjacks:seed2.v1.0.0
+    #build: ./seed-pg
     container_name: 'seed-pg'
     depends_on:
       - 'postgresDB'
@@ -70,5 +71,6 @@ services:
 
   postgresDB:
     image: postgres:10.2
+    #image: zaidhusseini/fullstack-flapjacks:mypostgres
     environment:
       POSTGRES_DB: menus
